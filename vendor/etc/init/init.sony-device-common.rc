@@ -1,0 +1,97 @@
+# Copyright (c) 2017, 2018 Sony Mobile Communications Inc.
+#
+# product common configuration
+#
+
+service touch_id /vendor/bin/sh /vendor/bin/touch_id.sh
+    group system
+    user system
+    disabled
+    oneshot
+    seclabel u:r:touch_id:s0
+
+on early-init
+    exec u:r:vendor_modprobe:s0 -- /vendor/bin/modprobe -a -d /vendor/lib/modules/ \
+        ldo_vibrator
+
+on early-init && property:ro.vendor.nfc.ko=*
+    exec u:r:vendor_modprobe:s0 -- /vendor/bin/modprobe -a -d /vendor/lib/modules/ \
+        ${ro.vendor.nfc.ko}
+
+on post-fs-data
+    start touch_id
+
+on boot && property:vendor.touch_id=4
+    exec u:r:vendor_modprobe:s0 -- /vendor/bin/modprobe -a -d /vendor/lib/modules/ \
+        clearpad_rmi_dev clearpad_core clearpad_i2c
+
+    write sys/devices/virtual/input/clearpad/post_probe_start 1
+
+    chown system system /sys/devices/virtual/input/clearpad/fwrevision
+    chmod 0600 /sys/devices/virtual/input/clearpad/fwrevision
+    restorecon /sys/devices/virtual/input/clearpad/fwrevision
+    chown system system /sys/devices/virtual/input/clearpad/fwfamily
+    chmod 0600 /sys/devices/virtual/input/clearpad/fwfamily
+    restorecon /sys/devices/virtual/input/clearpad/fwfamily
+    chown system system /sys/devices/virtual/input/clearpad/fwstate
+    chmod 0600 /sys/devices/virtual/input/clearpad/fwstate
+    restorecon /sys/devices/virtual/input/clearpad/fwstate
+    chown system system /sys/devices/virtual/input/clearpad/fwinfo
+    chmod 0600 /sys/devices/virtual/input/clearpad/fwinfo
+    restorecon /sys/devices/virtual/input/clearpad/fwinfo
+
+# Debug config for clearpad
+    chown system system /sys/devices/virtual/input/clearpad/hwtest
+    chmod 0600 /sys/devices/virtual/input/clearpad/hwtest
+    restorecon /sys/devices/virtual/input/clearpad/hwtest
+
+# Cover mode
+    chown system system /sys/devices/virtual/input/clearpad/cover_mode_enabled
+    chmod 0600 /sys/devices/virtual/input/clearpad/cover_mode_enabled
+    restorecon /sys/devices/virtual/input/clearpad/cover_mode_enabled
+    chown system system /sys/devices/virtual/input/clearpad/cover_win_bottom
+    chmod 0600 /sys/devices/virtual/input/clearpad/cover_win_bottom
+    restorecon /sys/devices/virtual/input/clearpad/cover_win_bottom
+    chown system system /sys/devices/virtual/input/clearpad/cover_win_left
+    chmod 0600 /sys/devices/virtual/input/clearpad/cover_win_left
+    restorecon /sys/devices/virtual/input/clearpad/cover_win_left
+    chown system system /sys/devices/virtual/input/clearpad/cover_win_right
+    chmod 0600 /sys/devices/virtual/input/clearpad/cover_win_right
+    restorecon /sys/devices/virtual/input/clearpad/cover_win_right
+    chown system system /sys/devices/virtual/input/clearpad/cover_win_top
+    chmod 0600 /sys/devices/virtual/input/clearpad/cover_win_top
+    restorecon /sys/devices/virtual/input/clearpad/cover_win_top
+
+    # Glove for clearpad
+    chown system system /sys/devices/common_touch/touch/glove_mode
+    chmod 0600 /sys/devices/common_touch/touch/glove_mode
+    restorecon /sys/devices/common_touch/touch/glove_mode
+
+on boot && property:vendor.touch_id=8
+    exec u:r:vendor_modprobe:s0 -- /vendor/bin/modprobe -a -d /vendor/lib/modules/ \
+        synaptics_tcm_i2c synaptics_tcm_core synaptics_tcm_touch \
+        synaptics_tcm_device synaptics_tcm_testing synaptics_tcm_reflash \
+        synaptics_tcm_recovery synaptics_tcm_diagnostics
+
+    chown system system /sys/bus/platform/devices/synaptics_tcm.0/synaptics_tcm/reflash/config_id
+    chmod 0600 /sys/bus/platform/devices/synaptics_tcm.0/synaptics_tcm/reflash/config_id
+    restorecon /sys/bus/platform/devices/synaptics_tcm.0/synaptics_tcm/reflash/config_id
+
+    # for tcm
+    chown system system /sys/devices/common_touch/touch/glove_mode
+    chmod 0600 /sys/devices/common_touch/touch/glove_mode
+    restorecon /sys/devices/common_touch/touch/glove_mode
+    chown system system /sys/devices/common_touch/touch/cover_mode
+    chmod 0600 /sys/devices/common_touch/touch/cover_mode
+    restorecon /sys/devices/common_touch/touch/cover_mode
+
+# Touch
+on property:dev.bootcomplete=1 && property:vendor.cover_state=*
+    write /sys/devices/common_touch/touch/cover_status ${vendor.cover_state}
+
+on property:dev.bootcomplete=1 && property:vendor.smartstamina.touchreport=*
+   write /sys/devices/common_touch/touch/stamina_mode ${vendor.smartstamina.touchreport}
+
+# Set value in property to sysfs for SuperStamina
+on property:sys.lcd_fpks=* && property:vendor.backlight_on=1
+    write /sys/devices/dsi_panel_driver/fps_mode ${sys.lcd_fpks}

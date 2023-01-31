@@ -1,0 +1,25 @@
+# Copyright (c) 2017 Sony Mobile Communications Inc.
+#
+# product specific configuration
+#
+
+on boot
+    # Oneseg
+    chown system system /dev/onesegtuner
+    chmod 660 /dev/onesegtuner
+    chown system system /dev/spidev32766.0
+    chmod 660 /dev/spidev32766.0
+    chown system system /sys/devices/onesegtuner_pdev/oneseg_power_ctrl
+    chmod 660 /sys/devices/onesegtuner_pdev/oneseg_power_ctrl
+    chown system system /sys/devices/onesegtuner_pdev/oneseg_irq
+    chmod 660 /sys/devices/onesegtuner_pdev/oneseg_irq
+    chown system system /sys/devices/onesegtuner_pdev/oneseg_irq_ctrl
+    chmod 660 /sys/devices/onesegtuner_pdev/oneseg_irq_ctrl
+
+on post-fs-data
+    # FeliCa/NFC
+    chown nfc nfc /dev/cxd224x-i2c
+    chown nfc nfc /dev/bd7602-i2c
+
+on early-boot
+    exec u:r:vendor_snfcboot:s0 -- /vendor/bin/snfcboot
