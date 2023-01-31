@@ -1,0 +1,9 @@
+on post-fs-data
+    #Fullseg data foldor
+    mkdir /data/dtv 0700 system system
+    restorecon_recursive /data/dtv
+
+# Fullseg
+service dtvserver /system/bin/dtvserver
+    class main
+    group sdcard_rw sdcard_r media_rw

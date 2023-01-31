@@ -1,0 +1,22 @@
+# Copyright (C) 2018 Sony Mobile Communications Inc.
+# All rights, including trade secret rights, reserved.
+#
+
+# Touch
+on property:dev.bootcomplete=1 && property:persist.sys.touch.glove_mode=*
+    write /sys/devices/common_touch/touch/glove_mode ${persist.sys.touch.glove_mode}
+
+on property:dev.bootcomplete=1 && property:persist.sys.touch.cover_mode_enabled=*
+    write /sys/devices/common_touch/touch/cover_mode ${persist.sys.touch.cover_mode_enabled}
+
+# sod doze mode
+on property:dev.bootcomplete=1 && property:sys.enable.smart_on_doze=*
+    write /sys/devices/dsi_panel_driver/sod_mode ${sys.enable.smart_on_doze}
+
+on property:dev.bootcomplete=1 && property:sys.preactivated.smart_on_display=*
+    write /sys/devices/virtual/input/lge_touch/pre_sod_mode ${sys.preactivated.smart_on_display}
+    write /sys/devices/dsi_panel_driver/pre_sod_mode ${sys.preactivated.smart_on_display}
+
+# Grip Suppression
+on property:dev.bootcomplete=1 && property:sys.config_orientation=*
+    write /sys/devices/virtual/input/lge_touch/grip_suppression ${sys.config_orientation}

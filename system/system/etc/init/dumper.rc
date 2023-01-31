@@ -1,0 +1,51 @@
+on init
+    chmod 0664 /proc/rdtag
+    chown root system /proc/rdtag
+
+on late-init
+    mkdir /mnt/tmp 0775
+    mount tmpfs tmpfs /mnt/tmp nosuid mode=0775,uid=0,gid=0
+
+on post-fs-data
+    # Create directory to store logs
+    mkdir /data/system/log 0770 root system
+    chown root system /data/system/log
+    chmod 0770 /data/system/log
+    mkdir /data/system/log/kernel 0770 root system
+    copy /sys/fs/pstore/console-ramoops-0 /data/system/log/kernel/console-ramoops-0
+    chmod 0640 /data/system/log/kernel/console-ramoops-0
+    copy /persist/time/ats_1 /data/system/log/ats_1
+    chmod 0640 /data/system/log/ats_1
+
+    # Create directory to dump bt crash reason
+    mkdir /mnt/tmp/bluetooth 0755 bluetooth bluetooth
+
+    # Create directory for partial dump
+    mkdir /data/crashdata 0770 root system
+
+    # Change java and native crashes to system owner to support O->P upgrade
+    chown system system /data/crashdata/tlcore_java_00
+    chown system system /data/crashdata/tlcore_java_01
+    chown system system /data/crashdata/tlcore_java_02
+    chown system system /data/crashdata/tlcore_java_03
+    chown system system /data/crashdata/tlcore_java_04
+    chown system system /data/crashdata/tlcore_java_05
+    chown system system /data/crashdata/tlcore_java_06
+    chown system system /data/crashdata/tlcore_java_07
+    chown system system /data/crashdata/tlcore_java_08
+    chown system system /data/crashdata/tlcore_java_09
+
+    chown system system /data/crashdata/tlcore_native_00
+    chown system system /data/crashdata/tlcore_native_01
+    chown system system /data/crashdata/tlcore_native_02
+    chown system system /data/crashdata/tlcore_native_03
+    chown system system /data/crashdata/tlcore_native_04
+    chown system system /data/crashdata/tlcore_native_05
+    chown system system /data/crashdata/tlcore_native_06
+    chown system system /data/crashdata/tlcore_native_07
+    chown system system /data/crashdata/tlcore_native_08
+    chown system system /data/crashdata/tlcore_native_09
+
+    restorecon_recursive --force /data/crashdata/
+    trigger partial_dump_dir_complete
+
