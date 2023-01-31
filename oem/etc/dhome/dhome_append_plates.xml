@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<append direction="left">
+    <!-- dポイント -->
+    <application
+        packageName="com.nttdocomo.android.dpoint"
+        className="com.nttdocomo.android.dpoint.MainActivity" />
+    <!-- Mydocomo -->
+    <application
+        packageName="com.nttdocomo.android.mydocomo"
+        className="jp.co.nttdocomo.mydocomo.activity.SplashActivity" />
+    <!-- dメニュー -->
+    <application
+        packageName="com.nttdocomo.android.dmenu2"
+        className="com.nttdocomo.android.docomo_market.ui.StartupActivity" />
+    <!-- dマーケット -->
+    <application
+        packageName="com.nttdocomo.android.store"
+        className="com.nttdocomo.android.store.activity.TopActivity" />
+    <!-- dゲーム -->
+    <launcher
+        icon="icd_app_dgame.png"
+        title="dゲーム"
+        title_en="d game"
+        uri="http://www.dmkt-sp.jp/?url=http%3A%2F%2Fportal.dmkt-sp.jp%2Fsp%2Fgame-store%2Ftop&amp;dcp=gameswebclipax010031" />
+    <!-- dブック -->
+    <launcher
+        icon="icd_app_dbook.png"
+        title="dブック"
+        title_en="d book"
+        uri="http://book.dmkt-sp.jp/top?utm_source=01android18s06" />
+    <!-- dミュージック -->
+    <launcher
+        icon="icd_app_dmusic.png"
+        title="dミュージック"
+        title_en="d music"
+        uri="http://rd.music.docomomarket.ne.jp/webclip_2018smmr06/" />
+    <!-- dアプリ＆レビュー -->
+    <launcher
+        icon="icd_app_app.png"
+        title="dアプリ＆レビュー"
+        title_en="d apps &amp; review"
+        uri="http://app.dcm-gate.com/?utm_source=device_home&amp;utm_medium=webclip&amp;utm_content=2018summer_so05k&amp;utm_campaign=prein" />
+    <!-- dショッピング -->
+    <launcher
+        icon="icd_app_dshopping.png"
+        title="dショッピング"
+        title_en="d shopping"
+        uri="http://shopping.dmkt-sp.jp/?utm_source=webclip&amp;utm_medium=ins&amp;utm_campaign=SO-05K_18SS" />
+    <!-- d fashion -->
+    <launcher
+        icon="icd_app_dfashion.png"
+        title="d fashion"
+        title_en="d fashion"
+        uri="http://fashion.dmkt-sp.jp/?affiliate=009&amp;utm_medium=ins&amp;utm_source=webclip&amp;utm_campaign=Android2018SS_SO-05K" />
+    <!-- dトラベル -->
+    <launcher
+        icon="icd_app_dtravel.png"
+        title="dトラベル"
+        title_en="d travel"
+        uri="https://travel.dmkt-sp.jp/mlr.php?aid=androidwebclip&amp;r=%2fsp%2f%3futm_source%3ddcm%26utm_medium%3dandroid%26utm_content%3dwebclip18ss_so05k%26utm_campaign%3dtop" />
+    <!-- dデリバリー -->
+    <launcher
+        icon="icd_app_ddelivery.png"
+        title="dデリバリー"
+        title_en="d delivery"
+        uri="https://delivery.dmkt-sp.jp/?utm_source=docomo&amp;utm_medium=android&amp;utm_content=webclip_SO-05K&amp;utm_campaign=top2018s" />
+    <!-- dジョブ -->
+    <launcher
+        icon="icd_app_djob.png"
+        title="dジョブ"
+        title_en="d job"
+        uri="https://job.dmkt-sp.jp?ref_code=docomo&amp;utm_source=android_webclip&amp;utm_medium=docomo&amp;utm_campaign=18s_so05k" />
+    <!-- dカーシェア -->
+    <launcher
+        icon="icd_app_dcarshare.png"
+        title="dカーシェア"
+        title_en="d carshare"
+        uri="https://carshare.dmkt-sp.jp/portal/?utm_source=d_other&amp;utm_medium=owned&amp;utm_campaign=prein_webclip&amp;utm_content=p15" />
+    <!-- ドコモ設定 -->
+	<launcher
+		icon="icd_app_docomosettings.png" 
+		title="ドコモ設定" 
+		title_en="docomo Settings" 
+		uri="#Intent;action=android.intent.action.MAIN;category=com.android.settings.SHORTCUT;launchFlags=0x200000;component=com.nttdocomo.android.docomoset/.DocomoServiceSetting;end"/>
+    <!-- dヘルスケア -->
+    <application
+        packageName="com.nttdocomo.android.dhealthcare"
+        className="com.nttdocomo.android.dhealthcare.StartActivity" />
+    <!-- d払い -->
+    <application
+        packageName="com.nttdocomo.keitai.payment"
+        className="com.nttdocomo.keitai.payment.activity.DPYSplashActivity" />
+    <!-- 新メッセージングアプリ -->
+    <application
+        packageName="com.nttdocomo.android.msg"
+        className="com.nttdocomo.android.msg.SplashScreenActivity" />
+</append>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<string-array name="external_storage_exclusion_folder">
+    <item>emulated</item>
+    <item>self</item>
+</string-array>
+
+<!-- prefix -->
+<string-array name="preset_prefix_folder">
+    <item>"EXTERNAL_STORAGE"/Download/</item>
+    <item>"EXTERNAL_STORAGE"/decome/</item>
+</string-array>
+<!-- prefix -->
+

@@ -1,0 +1,22 @@
+ro.build.description=SO-05K-user 9 52.0.B.9.316 2773184483 release-keys
+
+ro.product.vendor.brand=docomo
+ro.product.name=SO-05K
+ro.product.vendor.name=SO-05K
+ro.product.device=SO-05K
+ro.product.vendor.device=SO-05K
+ro.build.version.incremental=2773184483
+ro.build.tags=release-keys
+ro.build.fingerprint=docomo/SO-05K/SO-05K:9/52.0.B.9.316/2773184483:user/release-keys
+ro.vendor.build.fingerprint=docomo/SO-05K/SO-05K:9/52.0.B.9.316/2773184483:user/release-keys
+ro.bootimage.build.fingerprint=docomo/SO-05K/SO-05K:9/52.0.B.9.316/2773184483:user/release-keys
+ro.build.thumbprint=9/52.0.B.9.316/2773184483:user/release-keys
+
+######################## Customized property values #########################
+ro.semc.version.cust=1315-7886
+ro.semc.version.cust_revision=R11B
+ro.somc.customerid=608
+ro.product.brand=docomo
+ro.oem.key1=1315-7886
+#############################################################################
+

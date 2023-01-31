@@ -1,0 +1,19 @@
+## apollo_docomo-user 9 TAMA2-2.0.1-DOCOMO-191212-0529 1 dev-keys
+- Manufacturer: sony
+- Platform: sdm845
+- Codename: apollo_docomo
+- Brand: Sony
+- Flavor: apollo_docomo-user
+- Release Version: 9
+- Kernel Version: 4.9.112
+- Id: 52.0.B.9.316
+- Incremental: 1
+- Tags: dev-keys
+- CPU Abilist: arm64-v8a,armeabi-v7a,armeabi
+- A/B Device: true
+- Locale: en-US
+- Screen Density: undefined
+- Fingerprint: Sony/apollo_docomo/apollo_docomo:9/TAMA2-2.0.1-DOCOMO-191212-0529/1:user/dev-keys
+- OTA version: 
+- Branch: apollo_docomo-user-9-TAMA2-2.0.1-DOCOMO-191212-0529-1-dev-keys
+- Repo: sony_apollo_docomo_dump

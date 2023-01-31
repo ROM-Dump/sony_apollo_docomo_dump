@@ -1,0 +1,37 @@
+######################## Customized property values #########################
+ro.nfc.on.default=true
+ro.semc.emergency.masterreset=true
+ro.semc.spn.currentname=NTT DoCoMo
+ro.semc.spn.newname=NTT DOCOMO
+ro.com.google.clientidbase.am=android-docomo-jp
+ro.nfc.icon.enable=false
+ro.vendor.semc.ecclist.num=6
+ro.vendor.semc.ecclist.type.0=police
+ro.vendor.semc.ecclist.number.0=110
+ro.vendor.semc.ecclist.plmn.0=440 FFF
+ro.vendor.semc.ecclist.non_ecc.0=false
+ro.vendor.semc.ecclist.type.1=firebrigade ambulance
+ro.vendor.semc.ecclist.number.1=119
+ro.vendor.semc.ecclist.plmn.1=440 FFF
+ro.vendor.semc.ecclist.non_ecc.1=false
+ro.vendor.semc.ecclist.type.2=marineguard
+ro.vendor.semc.ecclist.number.2=118
+ro.vendor.semc.ecclist.plmn.2=440 FFF
+ro.vendor.semc.ecclist.non_ecc.2=false
+ro.vendor.semc.ecclist.type.3=police
+ro.vendor.semc.ecclist.number.3=110
+ro.vendor.semc.ecclist.plmn.3=441 FFF
+ro.vendor.semc.ecclist.non_ecc.3=false
+ro.vendor.semc.ecclist.type.4=marineguard
+ro.vendor.semc.ecclist.number.4=118
+ro.vendor.semc.ecclist.plmn.4=441 FFF
+ro.vendor.semc.ecclist.non_ecc.4=false
+ro.vendor.semc.ecclist.type.5=firebrigade ambulance
+ro.vendor.semc.ecclist.number.5=119
+ro.vendor.semc.ecclist.plmn.5=441 FFF
+ro.vendor.semc.ecclist.non_ecc.5=false
+ro.product.locale=ja-JP
+ro.cst.prm=1315-7886:R11B
+ro.com.nttdocomo.videocall=true
+#############################################################################
+

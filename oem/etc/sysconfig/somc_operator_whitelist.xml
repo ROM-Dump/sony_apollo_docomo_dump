@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config>
+   <allow-in-power-save package="com.nttdocomo.android.pf.dcmwappush"/>
+   <allow-in-power-save package="com.nttdocomo.android.applicationmanager"/>
+   <allow-in-power-save package="com.nttdocomo.android.remotelock"/>
+   <allow-in-power-save package="jp.co.nttdocomo.lcsapp"/>
+   <allow-in-power-save package="com.nttdocomo.android.atf"/>
+   <allow-in-power-save package="jp.co.nttdocomo.carriermail"/>
+   <allow-in-power-save package="com.nttdocomo.android.areamail"/>
+   <allow-in-power-save package="jp.co.nttdocomo.saigaiban"/>
+   <allow-in-power-save package="com.nttdocomo.android.iconcier"/>
+   <allow-in-power-save package="com.nttdocomo.osaifu.tsmproxy"/>
+   <allow-in-power-save package="com.nttdocomo.android.osv"/>
+   <allow-in-power-save package="jp.co.nttdocomo.anshinmode"/>
+   <allow-in-power-save package="com.nttdocomo.android.wipe"/>
+   <allow-in-power-save package="com.nttdocomo.android.idmanager"/>
+   <allow-in-power-save package="com.nttdocomo.android.pf.dcmippushaggregator"/>
+   <allow-in-power-save package="com.nttdocomo.android.anmane2"/>
+   <allow-in-power-save package="com.nttdocomo.android.mascot"/>
+   <allow-in-power-save package="com.nttdocomo.android.tapandpay"/>
+   <allow-unthrottled-location package="jp.co.nttdocomo.lcsapp"/>
+   <allow-in-power-save package="com.nttdocomo.android.phonemotion"/>
+</config>
